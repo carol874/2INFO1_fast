@@ -66,5 +66,5 @@ def listar_produtos():
 
             return {
                 "dados": [representar_produto(produto) for produto in produtos],
-                "sintaxesql": {"sql": sql, "parametros": lis(parametros)},
+                "sintaxesql": {"sql": sql, "parametros": list(parametros)},
             }
