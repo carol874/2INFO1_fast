@@ -35,3 +35,7 @@ def listar_produtos():
         "dados": [representar_produto(produto) for produto in produtos],
         "sintaxesql": {"sql": sql, "parametros": []},
     }
+
+    @app.get("/produtos/{produto_id}")
+    def consultar_produto(produto_id: int = Path(gt=0)):
+        sql = "Select id, nome, categoria, preco FROM produtos WHERE id = %s"
